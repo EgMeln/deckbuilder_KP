@@ -1,13 +1,12 @@
-import { useTheme } from "styled-components/macro";
-import { DarkMode } from "@styled-icons/material/DarkMode";
-import { LightMode } from "@styled-icons/material/LightMode";
+import {useTheme} from "styled-components/macro";
+import {DarkMode} from "@styled-icons/material/DarkMode";
+import {LightMode} from "@styled-icons/material/LightMode";
 
-import TODOsLogo from "D:/webstorm/untitled1/src/assets/logo.svg";
 import IconButton from "D:/webstorm/untitled1/src/components/IconButton";
 
-import { Container, Logo, LogoContainer, Title } from "./styled";
+import {Container, LogoContainer, Title} from "./styled";
 
-const Header = ({ toggleMode }) => {
+const Header = ({toggleMode}) => {
     const theme = useTheme();
 
     return (

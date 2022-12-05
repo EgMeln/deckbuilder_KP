@@ -1,5 +1,5 @@
-import Header from "D:/webstorm/untitled1/src/components/Header";
-import TodoList from "D:/webstorm/untitled1/src/pages/CardList";
+import Header from "../../components/Header";
+import TodoList from "../../pages/CardList";
 
 import {Container} from "./styled";
 

@@ -9,12 +9,6 @@ export const Container = styled.header`
   padding: 8px 16px;
 `;
 
-export const Logo = styled.img`
-  height: 40px;
-  margin: 4px;
-  width: 40px;
-`;
-
 export const LogoContainer = styled.a`
   align-items: center;
   display: flex;

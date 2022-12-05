@@ -1,22 +1,35 @@
-import { useState } from "react";
+import { Close } from "@styled-icons/material-outlined/Close";
 
-import addedImage from "D:/webstorm/untitled1/src/assets/added.png";
+import { removeCard, updateCard } from "../../../api/cards";
 
-import { Container, Image, Text } from "./styled";
+import { Container,Image, Content, Text } from "./styled";
 
-function Item(props) {
-    const [isAdded, setIsAdded] = useState(props.isAdded);
+const Item = ({ id, isFrontView,firstImagePath,secondImagePath, requestCards, text }) => {
+    const handleTodoClick = async () => {
+        await updateCard({ id, isFrontView: !isFrontView, text,firstImagePath,secondImagePath });
 
-    const toggleCompleteness = () => {
-        setIsAdded((prevState) => !prevState);
+        requestCards();
+    };
+
+    const handleRemoveClick = async () => {
+        await removeCard(id);
+
+        requestCards();
     };
 
     return (
-        <Container onClick={toggleCompleteness}>
-            <Image src={isAdded ? props.imagePath : addedImage} />
-            <Text>{props.text}</Text>
+        <Container isFrontView={isFrontView}>
+            <Content onClick={handleTodoClick}>
+                {!isFrontView ? (
+                    <Image src={firstImagePath} />
+                ) : (
+                    <Image src={secondImagePath} />
+                )}
+                <Text>{text}</Text>
+            </Content>
+            <Close size={24} title="Remove" onClick={handleRemoveClick} />
         </Container>
     );
-}
+};
 
 export default Item;

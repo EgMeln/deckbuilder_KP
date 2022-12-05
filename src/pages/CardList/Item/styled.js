@@ -1,11 +1,23 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-  border: 2px solid red;
+  align-items: center;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  margin: 4px 0;
+  padding: 4px;
+  border: 2px solid ${({ theme }) => theme.primary.dark};
+
 `;
 
+export const Content = styled.div`
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  
+`;
 export const Image = styled.img`
   align-self: center;
   height: 441px;
@@ -13,5 +25,9 @@ export const Image = styled.img`
 `;
 
 export const Text = styled.p`
-  align-self: center;
+  margin: 8px;
+  user-select: none;
+  font-size: 24px;
+  align-items: center;
+  
 `;
